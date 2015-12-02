@@ -15,7 +15,7 @@
 ## A Estrutura
 
 ```
-# MongoDb - Artigo Final
+# MongoDb - Artigo sobre Autenticação no MongoDb
 **Autor:** Nome Completo
 **Data** Date.now() //em timestamp
 
@@ -32,4 +32,5 @@
 
 Envie seu arquivo para [esse repositório](https://github.com/Webschool-io/be-mean-instagram-mongodb-articles) seguindo o seguinte padrão de nome para o arquivo:
 
-> project-githubuser-nome-completo-com-hífens.md
+> article-githubuser-nome-completo-com-hífens.md
+
