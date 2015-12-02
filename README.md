@@ -4,7 +4,7 @@
 
 **User**: githubuser
 
-**Data entregue**: Date.now()
+**Data entregue**: Date.now() //em timestamp
 
 1) Qual a diferença entre Autenticação e Autorização? 
 
