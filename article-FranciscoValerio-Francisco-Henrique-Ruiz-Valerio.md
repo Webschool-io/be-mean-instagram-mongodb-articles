@@ -28,7 +28,7 @@ db.createUser(
    {
      user: "appUser",
      pwd: "user123",
-     roles: [ { role: "readWrite", db: "products" } ]
+     roles: [ ]
    }
 )
 
