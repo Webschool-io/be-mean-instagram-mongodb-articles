@@ -1,6 +1,6 @@
 Autor: Tiago Amado Durante
 User: tiagodurante
-Data entregue: Date.now()
+Data entregue: 1449249876604
 
   1. Qual a diferença entre Autenticação e Autorização?
     A autenticação consiste no processo de envio de credenciais de determinado usuario a um servidor remoto afim de realizar uma conexão.
