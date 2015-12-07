@@ -72,3 +72,34 @@ db.createUser(
 	* emptycapped: O usuário poderá executar o comando `emptycapped`. Pode ser aplicado para `database` ou `collection`.
 	* enableProfiler: O usuário poderá executar o método `db.setProfilingLevel()`. Pode ser aplicado para `database` ou `collection`.
 	* grantRole: O usuário poderá conceder qualquer `role` na `database` para qualquer usuário de qualquer `database` no sistema. Pode ser aplicado para `database`.
+	* killCursors: O usuário pode matar cursores em determinadas coleções.
+	* revokeRole: O usuário pode remover qualquer `role` de qualquer usuário, em qualquer `database` no sistema. Pode ser aplicado para `database` ou `collection`.
+	* unlock: O usuário pode executar o método `db.fsyncUnlock()`. Pode ser aplicado para `cluster`.
+	* viewRole: O usuário pode visualizar informações sobre qualquer `role` da `database`. Pode ser aplicado para `database`.
+	* viewUser: O usuário pode visualizar informações de qualquer usuário da `database`. Pode ser aplicado para `database`.
+
+* Deployment Management Actions
+	* authSchemaUpgrade: O usuário poderá executar o comando `authSchemaUpdate`. Pode ser aplicado para `cluster`.
+	* cleanupOrphaned: O usuário poderá executar o comando `cleanupOrphaned`. Pode ser aplicado para `cluster`.
+	* cpuProfiler: O usuário poderá habilitar e utilizar o profiler da CPU. Pode ser aplicado para `cluster`.
+	* inprog: O usuário poderá utilizar o método `db.currentOp()` para retornar as operações ativas e as operações pendentes. Pode ser aplicado para `cluster`.
+	* invalidateUserCache: Permite acesso ao comando `invalidateUserCache`. Pode ser aplicado para `cluster`.
+	* killop: O usuário poderá executar o método `db.killOp()`. Pode ser aplicado para `cluster`.
+	* planCacheRead: O usuário poderá executar os comandos `planCacheListPlans`, `planCacheListQueryShapes` e os seguintes métodos: `PlanCache.getPlansByQuery()`, `PlanCache.listQueryByShapes()`. Pode ser aplicado para `database` ou `collection`.
+	* planCacheWrite: O usuário poderá executar o comando `planCacheClear` e os métodos `PlanCache.clear()` `PlanCache.clearPlansByQuery()`. Pode ser aplicado para `database` ou `collection`.
+	* storageDetails: O usuário poderá executar o comando `storageDetails`. Pode ser aplicado para `database` ou `collection`.
+
+* Replication Actions
+	* appendOplogNote: O usuário poderá acrescentar notas ao oplog.	Pode ser aplicado para `cluster`.
+	* replSetConfigure: O usuário poderá configurar o `replica set`. Pode ser aplicado para `cluster`.
+	* replSetGetStatus: O usuário poderá executar o comando `replSetGetStatus`. Pode ser aplicado para `cluster`.
+	* replSetHeartbeat: O usuário poderá executar o comando `replSetHeartbeat`. Pode ser aplicado para `cluster`.
+	* replSetStateChange: O usuário poderá alterar o estado da `replica set` através dos comandos: `replSetFreeze, replSetMaintence, replSetStepDown e `replSetSyncFrom`. Pode ser aplicado para `cluster`.
+	* resync: O usuário poderá executar o comando `resync`. Pode ser aplicado para `cluster`.
+
+* Sharding Actions
+	* addShard: O usuário poderá executar o comando `addShard`. Pode ser aplicado para `cluster`.
+	* enableSharding: O usuário poderá habilitar `sharding` na `database` utilizando o comando `enableSharding` e poderá fazer `shard` em `collections` utilizando o comando `shardCollection`. Pode ser aplicado para `database` ou `collection`.	
+	* flushRouterConfig: O usuário poderá executar o comando `flushRouterConfig`. Pode ser aplicado para `cluster`.
+
+	
