@@ -94,12 +94,60 @@ db.createUser(
 	* replSetConfigure: O usuário poderá configurar o `replica set`. Pode ser aplicado para `cluster`.
 	* replSetGetStatus: O usuário poderá executar o comando `replSetGetStatus`. Pode ser aplicado para `cluster`.
 	* replSetHeartbeat: O usuário poderá executar o comando `replSetHeartbeat`. Pode ser aplicado para `cluster`.
-	* replSetStateChange: O usuário poderá alterar o estado da `replica set` através dos comandos: `replSetFreeze, replSetMaintence, replSetStepDown e `replSetSyncFrom`. Pode ser aplicado para `cluster`.
+	* replSetStateChange: O usuário poderá alterar o estado da `replica set` através dos comandos: `replSetFreeze`, `replSetMaintence`, `replSetStepDown` e `replSetSyncFrom`. Pode ser aplicado para `cluster`.
 	* resync: O usuário poderá executar o comando `resync`. Pode ser aplicado para `cluster`.
 
 * Sharding Actions
 	* addShard: O usuário poderá executar o comando `addShard`. Pode ser aplicado para `cluster`.
 	* enableSharding: O usuário poderá habilitar `sharding` na `database` utilizando o comando `enableSharding` e poderá fazer `shard` em `collections` utilizando o comando `shardCollection`. Pode ser aplicado para `database` ou `collection`.	
 	* flushRouterConfig: O usuário poderá executar o comando `flushRouterConfig`. Pode ser aplicado para `cluster`.
+	* getShardMap: O usuário poderá executar o comando `getShardMap` Pode ser aplicado para `cluster`.
+	* getShardVersion: O usuário poderá executar o comando `getShardVersion`. Pode ser aplicado para `database`.
+	* listShards: O usuário poderá executar o comando `listshards`. Pode ser aplicado para `cluster`.
+	* moveChunk: O usuário pode executar o comando `moveChunk`. Além disso, o usuário também poderá executar o comando `movePrimary` deste que o privilégio esteja aplicado à `database` apropriada.
+	* removeShard: O usuário poderá executar o comando `removeShard`. Pode ser aplicado para `cluster`.
+	* shardingState: Oo usuário poderá executar o comando `shardingState`. Pode ser aplicado para `cluster`.
+	* splitChunk: O usuário poderá executar o comando `splitChunk`. Pode ser aplicado para `database` ou `collection`.
+	* splitVector: O usuário poderá executar o comando `splitVector`. Pode ser aplicado para `database` ou `collection`.
 
-	
+* Server Administration Actions
+	* applicationMessage: O usuário poderá executar o comando `logApplicationMessage`. Pode ser aplicado para `cluster`.
+	* closeAllDatabases: O usuário poderá executar o comando `closeAllDatabases`. Pode ser aplicado para `cluster`.
+	* collMod: O usuário poderá executar o comando `collMod`. Pode ser aplicado para `database` ou `collection`.
+	* compact: O usuário poderá executar o comando `compact`. Pode ser aplicado para `database` ou `collection`.
+	* connPoolSync: O usuário poderá executar o comando `connPoolSync`. Pode ser aplicado para `cluster`.
+	* convertToCapped: O usuário poderá executar o comando `convertToCapped`. Pode ser aplicado para `database` ou `collection`.
+	* dropDatabase: O usuário poderá executar o comando `dropDatabase`. Pode ser aplicado para `database`.
+	* dropIndex: O usuário poderá executar o comando `dropIndexes`. Pode ser aplicado para `cluster`.
+	* fsync: O usuário poderá executar o comando `fsync`. Pode ser aplicado para `cluster`.
+	* getParameter: O usuário poderá executar o comando `getParameter`. Pode ser aplicado para `cluster`.
+	* hostInfo: Provê informações sobre a instância do servidor de MongoDB. Pode ser aplicado para `cluster`.
+	* logRotate: O usuário poderá executar o comando `logRotate`. Pode ser aplicado para `cluster`.
+	* reIndex: O usuário poderá executar o comando `reIndex`. Pode ser aplicado para `database` ou `collection`.
+	* renameCollectionSameDB: Permite que o usuário possa renomear `collections` da `database` atual utilizando o comando `renameCollection`. Pode ser aplicado para `database`. 
+	* repairDatabase: O usuário poderá executar o comando `repairDatabase`. Pode ser aplicado para `database`.
+	* setParameter: O usuário poderá executar o comando `setParameter`. Pode ser aplicado para `cluster`.
+	* shutdown: O usuário poderá executar o comando `shutdown`. Pode ser aplicado para `cluster`.
+	* touch: O usuário poderá executar o comando `touch`. Pode ser aplicado para `cluster`.
+
+* Diagnostic Actions
+	* collStats: O usuário poderá executar o comando `collStats`. Pode ser aplicado para `database` ou `collection`.
+	* connPoolStats: O usuário poderá executar os comandos `connPoolStats` e `shardconnPoolStats`. Pode ser aplicado para `cluster`.
+	* cursosInfo: O usuário poderá executar o comando `cursorInfo`. Pode ser aplicado para `cluster`.
+	* dbHash: O usuário poderá executar o comando `dbHash`. Pode ser aplicado para `database` ou `collection`.
+	* dbStats: O usuário poderá executar o comando `dbStats`. Pode ser aplicado para `database`.
+	* diagLogging: O usuário poderá executar o comando `diagLogging`. Pode ser aplicado para `cluster`.
+	* getCmdLineOpts: O usuário poderá executar o comando `getCmdLineOpts`. Pode ser aplicado para `cluster`.
+	* getLog: O usuário poderá executar o comando `getLog`. Pode ser aplicado para `cluster`.
+	* indexStats: 	O usuário poderá executar o comando `indexStats`. Pode ser aplicado para `database` ou `collection`. **Alteração no MongoDB 3.0: MongoDB 3.0 removou o comando `indexStats`.
+	* listDatabases: O usuário poderá executar o comando `listDatabases`. Pode ser aplicado para `cluster`.
+	* listCollections: O usuário poderá executar o comando `listCollections`. Pode ser aplicado para `database`.
+	* listIndexes: O usuário poderá executar o comando `ListIndexes`. Pode ser aplicado para `database` ou `collection`.
+	* netstat: O usuário poderá executar o comando `netstat`. Pode ser aplicado para `cluster`.
+	* serverStatus: O usuário poderá executar o comando `serverStatus`. Pode ser aplicado para `cluster`.
+	* validate: O usuário poderá executar o comando `validate`. Pode ser aplicado para `database` ou `collection`.
+	* top: O usuário poderá executar o comando `top`. Pode ser aplicado para `cluster`.
+
+* Internal Actions
+	* anyAction: Permite qualquer ação em um recurso. **Não utilize, exceto em circunstâncias excepcionais.**
+	* internal: Permite ações internas. **Não utilize, exceto em circunstâncias excepcionais.**
