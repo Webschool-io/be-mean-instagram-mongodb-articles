@@ -2,7 +2,7 @@
 
 **Autor:** Lucas da Silva Moreira
 
-**Data** Date.now() //em timestamp
+**Data** 1449495116736
 
 ## Qual a diferença entre Autenticação e Autorização?
 
