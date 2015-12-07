@@ -37,3 +37,7 @@ Envie seu arquivo para [esse repositório](https://github.com/Webschool-io/be-me
 
 > article-githubuser-nome-completo-com-hífens.md
 
+**ENVIE NA PASTA ARTICLES!!!**
+
+
+
