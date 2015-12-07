@@ -139,7 +139,7 @@ db.createUser(
 	* diagLogging: O usuário poderá executar o comando `diagLogging`. Pode ser aplicado para `cluster`.
 	* getCmdLineOpts: O usuário poderá executar o comando `getCmdLineOpts`. Pode ser aplicado para `cluster`.
 	* getLog: O usuário poderá executar o comando `getLog`. Pode ser aplicado para `cluster`.
-	* indexStats: 	O usuário poderá executar o comando `indexStats`. Pode ser aplicado para `database` ou `collection`. **Alteração no MongoDB 3.0: MongoDB 3.0 removou o comando `indexStats`.
+	* indexStats: 	O usuário poderá executar o comando `indexStats`. Pode ser aplicado para `database` ou `collection`. **Alteração no MongoDB 3.0: MongoDB 3.0 removou o comando `indexStats`**.
 	* listDatabases: O usuário poderá executar o comando `listDatabases`. Pode ser aplicado para `cluster`.
 	* listCollections: O usuário poderá executar o comando `listCollections`. Pode ser aplicado para `database`.
 	* listIndexes: O usuário poderá executar o comando `ListIndexes`. Pode ser aplicado para `database` ou `collection`.
