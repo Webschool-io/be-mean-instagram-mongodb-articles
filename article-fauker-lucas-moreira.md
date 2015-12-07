@@ -2,7 +2,7 @@
 
 **Autor:** Lucas da Silva Moreira
 
-**Data** 1449495116736
+**Data**: 1449495116736
 
 ## Qual a diferença entre Autenticação e Autorização?
 
