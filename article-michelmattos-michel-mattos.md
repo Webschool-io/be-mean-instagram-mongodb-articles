@@ -167,3 +167,7 @@ Permite monitorar e gerenciar servidores.
 * `serverStatus`: usuário pode executar o commando `serverStatus` num cluster.
 * `validate`: usuário pode executar o commando `validate` num banco de dados ou coleção.
 * `top`: usuário pode executar o commando `top` num cluster.
+
+### Ações Internas
+* `anyAction`: usuário pode executar qualquer ação num recurso. Não use esse papel, exceto em circunstâncias excepcionais.
+* `internal`: usuário pode executar qualquer ação interna. Não use esse papel, exceto em circunstâncias excepcionais.
