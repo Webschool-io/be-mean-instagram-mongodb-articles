@@ -131,21 +131,39 @@ Permite monitorar e gerenciar servidores.
 * `splitVector`: usuário pode executar o commando `splitVector` num banco de dados ou coleção.
 
 ### Ações de Administração de Servidor
-* `applicationMessage`: 
-* `closeAllDatabases`: 
-* `collMod`: 
-* `compact`: 
-* `connPoolSync`: 
-* `convertToCapped`: 
-* `dropDatabase`: 
-* `dropIndex`: 
-* `fsync`: 
-* `getParameter`: 
-* `hostInfo`: 
-* `logRotate`: 
-* `reIndex`: 
-* `renameCollectionSameDB`: 
-* `repairDatabase`: 
-* `setParameter`: 
-* `shutdown`: 
-* `touch`: 
+* `applicationMessage`: usuário pode executar o commando `logApplicationMessage` num cluster.
+* `closeAllDatabases`: usuário pode executar o commando `closeAllDatabases` num cluster.
+* `collMod`: usuário pode executar o commando `collMod` num banco de dados ou coleção.
+* `compact`: usuário pode executar o commando `compact` num banco de dados ou coleção.
+* `connPoolSync`: usuário pode executar o commando `connPoolSync` num cluster.
+* `convertToCapped`: usuário pode executar o commando `convertToCapped` num banco de dados ou coleção.
+* `dropDatabase`: usuário pode executar o commando `dropDatabase` num banco de dados ou coleção.
+* `dropIndex`: usuário pode executar o commando `dropIndex` num banco de dados ou coleção.
+* `fsync`: usuário pode executar o commando `fsync` num cluster.
+* `getParameter`: usuário pode executar o commando `getParameter` num cluster.
+* `hostInfo`: usuário pode ver informações sobre o servidor onde a instância do MongoDB está rodando num cluster.
+* `logRotate`: usuário pode executar o commando `logRotate` num cluster.
+* `reIndex`: usuário pode executar o commando `reIndex` num banco de dados ou coleção.
+* `renameCollectionSameDB`: usuário pode renomear uma coleção no banco de dados atual.
+* `repairDatabase`: usuário pode executar o commando `repairDatabase` num banco de dados.
+* `setParameter`: usuário pode executar o commando `setParameter` num cluster.
+* `shutdown`: usuário pode executar o commando `shutdown` num cluster.
+* `touch`: usuário pode executar o commando `touch` num cluster.
+
+### Ações de Diagnóstico
+* `collStats`: 
+* `connPoolStats`: 
+* `cursorInfo`: 
+* `dbHash`: 
+* `dbStats`: 
+* `diagLogging`: 
+* `getCmdLineOpts`: 
+* `getLog`: 
+* `indexStats`: 
+* `listDatabases`: 
+* `listCollections`: 
+* `listIndexes`: 
+* `netstat`: 
+* `serverStatus`: 
+* `validate`: 
+* `top`: 
