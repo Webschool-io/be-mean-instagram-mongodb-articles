@@ -151,19 +151,19 @@ Permite monitorar e gerenciar servidores.
 * `touch`: usuário pode executar o commando `touch` num cluster.
 
 ### Ações de Diagnóstico
-* `collStats`: 
-* `connPoolStats`: 
-* `cursorInfo`: 
-* `dbHash`: 
-* `dbStats`: 
-* `diagLogging`: 
-* `getCmdLineOpts`: 
-* `getLog`: 
-* `indexStats`: 
-* `listDatabases`: 
-* `listCollections`: 
-* `listIndexes`: 
-* `netstat`: 
-* `serverStatus`: 
-* `validate`: 
-* `top`: 
+* `collStats`: usuário pode executar o commando `collStats` num banco de dados ou coleção.
+* `connPoolStats`: usuário pode executar od commandod `connPoolStats` e `shardConnPoolStats` num cluster.
+* `cursorInfo`: usuário pode executar o commando `cursorInfo` num cluster.
+* `dbHash`: usuário pode executar o commando `dbHash` num banco de dados ou coleção.
+* `dbStats`: usuário pode executar o commando `dbStats` num banco de dados.
+* `diagLogging`: usuário pode executar o commando `diagLogging` num cluster.
+* `getCmdLineOpts`: usuário pode executar o commando `getCmdLineOpts` num cluster.
+* `getLog`: usuário pode executar o commando `getLog` num cluster.
+* `indexStats`: usuário pode executar o commando `indexStats` num banco de dados ou coleção.
+* `listDatabases`: usuário pode executar o commando `listDatabases` num cluster.
+* `listCollections`: usuário pode executar o commando `listCollections` num banco de dados.
+* `listIndexes`: usuário pode executar o commando `ListIndexes` num banco de dados ou coleção.
+* `netstat`: usuário pode executar o commando `netstat` num cluster.
+* `serverStatus`: usuário pode executar o commando `serverStatus` num cluster.
+* `validate`: usuário pode executar o commando `validate` num banco de dados ou coleção.
+* `top`: usuário pode executar o commando `top` num cluster.
