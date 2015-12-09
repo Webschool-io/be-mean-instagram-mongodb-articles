@@ -34,7 +34,7 @@ db.createUser(
 )
 ```  
 
-3. Explique cada papel listado aqui em Cluster Administration Roles.
+## Explique cada papel listado em Cluster Administration Roles.
 Funcções de Administração de Cluster:
 
 1 - clusterAdmin:
@@ -146,7 +146,7 @@ Funcções de Administração de Cluster:
 
 
    
-4. Explique todas as ações de privilégio listadas aqui Privilege Actions.
+## Explique todas as ações de privilégio listadas em Privilege Actions  
 
 * Privilege Actions
       * `find:` o usuário pode realizar uma busca `db.collection.find()` em uma collection.
