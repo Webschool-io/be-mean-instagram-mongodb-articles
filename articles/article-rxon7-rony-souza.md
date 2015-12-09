@@ -2,19 +2,19 @@
 **Autor:** Rony Souza
 **Data:** 08/12/2015
 
-1. Qual a diferença entre Autenticação e Autorização?
+## Qual a diferença entre Autenticação e Autorização?  
   
-  Autenticação:
-    É realizada quando é enviada dados de usuário para um servidor, ele pode ser criptografado ou não.
+Autenticação:
+É realizada quando é enviada dados de usuário para um servidor, ele pode ser criptografado ou não.
 
-  Autorização:
-    É realizada após a autenticação ser validada com sucesso, permite ou não o acesso.
+Autorização:
+É realizada após a autenticação ser validada com sucesso, permite ou não o acesso.
 
 
-2. Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
+## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum  
   
 Criação de usuário admin:
-
+```  
 db.createUser(
   {
     user: "appAdmin",
@@ -32,6 +32,7 @@ db.createUser(
      roles: [ ]
    }
 )
+```  
 
 3. Explique cada papel listado aqui em Cluster Administration Roles.
 Funcções de Administração de Cluster:
