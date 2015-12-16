@@ -4,7 +4,7 @@
 **Data:** 1450233070833
 
 ## Qual a diferença entre Autenticação e Autorização?
-Resumidamente podemos dizer que **autenticação** é a validação dos dados de acessos recebidos em um determinado acesso e **autorização** é a verificação dos direitos deste usuário préviamente autenticado.
+Resumidamente podemos dizer que **autenticação** é a validação dos dados de acesso recebidos em um determinada requisição e **autorização** é a verificação dos direitos deste usuário previamente autenticado.
 
 ## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
 - Usuário **admin**
