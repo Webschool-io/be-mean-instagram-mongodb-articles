@@ -4,7 +4,7 @@
 **Data:** 1450233070833
 
 ## Qual a diferença entre Autenticação e Autorização?
-Resumidamente podemos dizer que **autenticação** é a validação dos dados de acesso recebidos em um determinada requisição e **autorização** é a verificação dos direitos deste usuário previamente autenticado.
+Resumidamente podemos dizer que **autenticação** é a validação dos dados de acesso recebidos em um determinada requisição e **autorização** é a verificação dos direitos deste usuário autenticado conforme as ações executadas.
 
 ## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
 - Usuário **admin**
@@ -62,16 +62,16 @@ Successfully added user: {
 ## Explique todas as ações de privilégio listadas em Privilege Actions.
 ### Ações de Leitura e Escrita
 - find
-  - Permite a utilização do método [https://docs.mongodb.org/manual/reference/method/db.collection.find/#db.collection.find](db.collection.find()).
+  - Permite a utilização do método [db.collection.find()](https://docs.mongodb.org/manual/reference/method/db.collection.find/#db.collection.find).
 
 - insert
-  - Permite a utilização do comando [https://docs.mongodb.org/manual/reference/command/insert/#dbcmd.insert](insert).
+  - Permite a utilização do comando [insert](https://docs.mongodb.org/manual/reference/command/insert/#dbcmd.insert).
 
 - remove
-  - Permite a utilização do método [https://docs.mongodb.org/manual/reference/method/db.collection.remove/#db.collection.remove](db.collection.remove).
+  - Permite a utilização do método [db.collection.remove()](https://docs.mongodb.org/manual/reference/method/db.collection.remove/#db.collection.remove).
 
 - update
-  - Permite a utilização do comando [https://docs.mongodb.org/manual/reference/command/update/#dbcmd.update](update).
+  - Permite a utilização do comando [update](https://docs.mongodb.org/manual/reference/command/update/#dbcmd.update).
 
 - bypassDocumentValidation
   - Objeto de configuração utilizado por alguns parâmetros.
