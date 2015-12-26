@@ -18,7 +18,7 @@ Para criar um usuário administrador basta executar...
 use database
 db.addUser({
   user: "admin",
-  pwd: "admin123"",
+  pwd: "admin123",
   roles: [ "userAdminAnyDatabase", "readAnyDatabase", "clusterAdmin" ]
 })
 ```
