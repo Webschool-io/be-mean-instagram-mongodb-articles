@@ -1,6 +1,6 @@
 # MongoDb - Artigo sobre Autenticação no MongoDb
-**Autor:** Nome Completo
-**Data** Date.now()
+**Autor:** Carlos Augusto de Souza Lima
+**Data** 05/01/2016 22:29
 
 ## Qual a diferença entre Autenticação e Autorização?
 A autenticação verifica a identidade de um utilizador já a autorização determina o acesso do usuário verificada a recursos e operações.
