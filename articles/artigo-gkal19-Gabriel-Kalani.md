@@ -13,9 +13,10 @@ Isso pode ser usado muito em redes sociais, e-commerce, blogs e muito mais.
 Resumidamente: A **Autenticação irá iniciar um processo de verificação de um determinado usuário e a **Autorização** determina quais recursos e operações serão permitidos ao determinado usuário.
 
 Exemplos:
-**Autenticação** => Geralmente, para fazer login em um site, rede social ou loja é necessário um username e password válidos.
+**Autenticação** => É comum hoje em dia acessarmos o Facebook e ele pede para fazermos nosso login para podermos ter acesso a funcionalidades da aplicação.
 
 **Autorização** => Se o username e password forem válidos, o sistema irá permitir a entrada e o uso de recursos e operações.
+Mas caso não seja válido, ele te redicionará para a página de cadastro/login.
 
 ## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
 
