@@ -4,7 +4,7 @@
 
 ## Qual a diferença entre Autenticação e Autorização?
 
-Autenticar é enivar dados de usuário para o servidor, com ou sem criptografia.
+Autenticar é enviar dados do usuário para o servidor, com ou sem criptografia.
 Autorizar é autenticar o usuário após uma validação, permitindo ou não o acesso do mesmo
 
 ## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
