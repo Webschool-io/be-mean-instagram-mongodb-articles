@@ -10,6 +10,8 @@ Para mim, **Autenticação** é como um processo de verificação no qual um ser
 E o processo de **Autorização** vai verificando se a conexão e as credenciais são permitidas para o acesso do sistema.
 Isso pode ser usado muito em redes sociais, e-commerce, blogs e muito mais.
 
+Resumidamente: A **Autenticação irá iniciar um processo de verificação de um determinado usuário e a **Autorização** determina quais recursos e operações serão permitidos ao determinado usuário.
+
 
 ## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
 
