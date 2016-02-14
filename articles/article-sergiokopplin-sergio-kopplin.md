@@ -78,112 +78,287 @@ As *Privilege Actions* definem as operações que um usuário pode realizar no s
 
 ### Query and Write Actions
 
-find: o usuário poderá executar o método `db.collection.find()` em uma *collection*.
-insert: o usuário poderá executar os métodos de inserção em uma *collection*.
-remove: o usuário poderá executar o método `db.collection.remove()` em uma *collection*.
-update: o usuário poderá executar os métodos de atualização em uma *collection*.
+**find**
+O usuário poderá executar o método `db.collection.find()` em uma *collection*.
+
+**insert**
+O usuário poderá executar os métodos de inserção em uma *collection*.
+
+**remove**
+O usuário poderá executar o método `db.collection.remove()` em uma *collection*.
+
+**update**
+O usuário poderá executar os métodos de atualização em uma *collection*.
+
+---
 
 ### Database Management Actions
 
-changeCustomData: o usuário poderá alterar qualquer informação de qualquer outro usuário do banco informado.
-changeOwnCustomData: o usuário poderá alterar qualquer informação sua.
-changeOwnPassword: o usuário poderá alterar sua senha.
-changePassword: o usuário poderá alterar a senha de qualquer outro usuário do banco informado.
-createCollection: o usuário poderá executar o método `db.createCollection()`.
-createIndex: o usuário poderá executar o método `db.collection.createIndex()` e o comando `createIndexes`.
-createRole: o usuário poderá criar novas `roles` no banco informado.
-createUser: o usuário poderá cirar novos usuário no banco informado.
-dropCollection: o usuário poderá executar o método `db.collection.drop()`.
-dropRole: o usuário poderá deletar qualquer `role` do banco informado.
-dropUser: o usuário poderá remover qualquer usuário do banco informado.
-emptycapped: o usuário poderá executar o comando `emptycapped`.
-enableProfiler: o usuário poderá executar o método `db.setProfilingLevel()`.
-grantRole: o usuário poderá atribuir qualquer `role` do banco para qualquer usuário do banco.
-killCursors: o usuário poderá matar/derrubar cursores na `collection` selecionado.
-revokeRole: o usuário poderá remover qualquer `role` de qualquer usuário do banco.
-unlock:  o usuário poderá executar o método `db.fsyncUnlock()`.
-viewRole: o usuário poderá ver qualquer informação de qualquer `role` no banco informado.
-viewUser: o usuário poderá ver as informações de qualquer usuário no banco informado.
+**changeCustomData**
+O usuário poderá alterar qualquer informação de qualquer outro usuário do banco informado.
+
+**changeOwnCustomData**
+O usuário poderá alterar qualquer informação sua.
+
+**changeOwnPassword**
+O usuário poderá alterar sua senha.
+
+**changePassword**
+O usuário poderá alterar a senha de qualquer outro usuário do banco informado.
+
+**createCollection**
+O usuário poderá executar o método `db.createCollection()`.
+
+**createIndex**
+O usuário poderá executar o método `db.collection.createIndex()` e o comando `createIndexes`.
+
+**createRole**
+O usuário poderá criar novas `roles` no banco informado.
+
+**createUser**
+O usuário poderá cirar novos usuário no banco informado.
+
+**dropCollection**
+O usuário poderá executar o método `db.collection.drop()`.
+
+**dropRole**
+O usuário poderá deletar qualquer `role` do banco informado.
+
+**dropUser**
+O usuário poderá remover qualquer usuário do banco informado.
+
+**emptycapped**
+O usuário poderá executar o comando `emptycapped`.
+
+**enableProfiler**
+O usuário poderá executar o método `db.setProfilingLevel()`.
+
+**grantRole**
+O usuário poderá atribuir qualquer `role` do banco para qualquer usuário do banco.
+
+**killCursors**
+O usuário poderá matar/derrubar cursores na `collection` selecionado.
+
+**revokeRole**
+O usuário poderá remover qualquer `role` de qualquer usuário do banco.
+
+**unlock**
+Oo usuário poderá executar o método `db.fsyncUnlock()`.
+
+**viewRole**
+O usuário poderá ver qualquer informação de qualquer `role` no banco informado.
+
+**viewUser**
+O usuário poderá ver as informações de qualquer usuário no banco informado.
+
+---
 
 ### Deployment Management Actions
 
-authSchemaUpgrade: o usuário poderá executar o comando `authSchemaUpgrade`.
-cleanupOrphaned: o usuário poderá executar o comando `cleanupOrphaned`.
-cpuProfiler: o usuário poderá abilitar e usar o *CPU profiler*.
-inprog: o usuário poderá usar método `db.currentOp()` para retornar as operações ativas pendentes.
-invalidateUserCache: prove o acesso ao comando `invalidateUserCache`.
-killop: o usuário poderá executar o método `db.killOp()`.
-planCacheRead: o usuário poderá executar os comandos `planCacheListPlans` e `planCacheListQueryShapes`, e os métodos `PlanCache.getPlansByQuery()` e `PlanCache.listQueryShaps()`.
-planCacheWrite: o usuário poderá executar o comando `planCacheClear`, e os métodos `PlanCache.clear()` and `PlanCache.clearPlansByQuery()`.
-storageDetails: o usuário poderá executar o comando `storageDetails`.
+**authSchemaUpgrade**
+O usuário poderá executar o comando `authSchemaUpgrade`.
+
+**cleanupOrphaned**
+O usuário poderá executar o comando `cleanupOrphaned`.
+
+**cpuProfiler**
+O usuário poderá abilitar e usar o *CPU profiler*.
+
+**inprog**
+O usuário poderá usar método `db.currentOp()` para retornar as operações ativas pendentes.
+
+**invalidateUserCache**
+Orove o acesso ao comando `invalidateUserCache`.
+
+**killop**
+O usuário poderá executar o método `db.killOp()`.
+
+**planCacheRead**
+O usuário poderá executar os comandos `planCacheListPlans` e `planCacheListQueryShapes`, e os métodos `PlanCache.getPlansByQuery()` e `PlanCache.listQueryShaps()`.
+
+**planCacheWrite**
+O usuário poderá executar o comando `planCacheClear`, e os métodos `PlanCache.clear()` and `PlanCache.clearPlansByQuery()`.
+
+**storageDetails**
+O usuário poderá executar o comando `storageDetails`.
+
+---
 
 ### Replication Actions
 
-appendOplogNote: o usuário poderá anexar notas ao `oplog`.
-replSetConfigure: o usuário poderá configurar o `replica set`.
-replSetGetStatus: o usuário poderá executar o comando `replSetGetStatus`.
-replSetHeartbeat: o usuário poderá executar o comando `replSetHeartbeat`.
-replSetStateChange: o usuário poderá mudar o estado do `replica set` atravez dos comandos `replSetFreeze`, `replSetMaintenance`, `replSetStepDown`, e `replSetSyncFrom`.
-resync: o usuário poderá executar o comando `resync`.
+**appendOplogNote**
+O usuário poderá anexar notas ao `oplog`.
+
+**replSetConfigure**
+O usuário poderá configurar o `replica set`.
+
+**replSetGetStatus**
+O usuário poderá executar o comando `replSetGetStatus`.
+
+**replSetHeartbeat**
+O usuário poderá executar o comando `replSetHeartbeat`.
+
+**replSetStateChange**
+O usuário poderá mudar o estado do `replica set` atravez dos comandos `replSetFreeze`, `replSetMaintenance`, `replSetStepDown`, e `replSetSyncFrom`.
+
+**resync**
+O usuário poderá executar o comando `resync`.
+
+---
 
 ### Sharding Actions
 
-addShard: o usuário poderá executar o comando `addShard`.
-enableSharding: o usuário poderá abilitar `shargind` no banco utilizado o comando `enableSharding` e também poderá *shardear* uma `collection` utilizando o comando `shardCollection`.
-flushRouterConfig: o usuário poderá executar o comando `flushRouterConfig`.
-getShardMap: o usuário poderá exeutar o comando `getShardMap`.
+**addShard**
+O usuário poderá executar o comando `addShard`.
+
+**enableSharding**
+O usuário poderá abilitar `shargind` no banco utilizado o comando `enableSharding` e também poderá *shardear* uma `collection` utilizando o comando `shardCollection`.
+
+**flushRouterConfig**
+O usuário poderá executar o comando `flushRouterConfig`.
+
+**getShardMap**
+O usuário poderá exeutar o comando `getShardMap`.
 User can perform the getShardMap command. Apply this action to the cluster resource.
-getShardVersion: o usuário poderá exeutar o comando `getShardVersion`.
-listShards: o usuário poderá exeutar o comando `listShards`.
-moveChunk: o usuário poderá executar o comando `moveChunk`. E também executar o comando `movePrimary`.
-removeShard: o usuário poderá executar o comando `removeShard`.
-shardingState: o usuário poderá executar o comando `shardingState`.
-splitChunk: o usuário poderá executar o comando `splitChunk`.
-splitVector: o usuário poderá executar o comando `splitVector`.
+
+**getShardVersion**
+O usuário poderá exeutar o comando `getShardVersion`.
+
+**listShards**
+O usuário poderá exeutar o comando `listShards`.
+
+**moveChunk**
+O usuário poderá executar o comando `moveChunk`. E também executar o comando `movePrimary`.
+
+**removeShard**
+O usuário poderá executar o comando `removeShard`.
+
+**shardingState**
+O usuário poderá executar o comando `shardingState`.
+
+**splitChunk**
+O usuário poderá executar o comando `splitChunk`.
+
+**splitVector**
+O usuário poderá executar o comando `splitVector`.
+
+---
 
 ### Server Administration Actions
 
-applicationMessage: o usuário poderá executar o comando `logApplicationMessage`.
-closeAllDatabases: o usuário poderá executar o comando `closeAllDatabases`.
-collMod: o usuário poderá executar o comando `collMod`.
-compact: o usuário poderá executar o comando `compact`.
-connPoolSync: o usuário poderá executar o comando `connPoolSync`.
-convertToCapped: o usuário poderá executar o comando `convertToCapped`.
-dropDatabase: o usuário poderá executar o comando `dropDatabase`.
-dropIndex: o usuário poderá executar o comando `dropIndexes`.
-fsync: o usuário poderá executar o comando `fsync`.
-getParameter: o usuário poderá executar o comando `getParameter`.
-hostInfo: fornece informações sobre o server do MongoDB que está rodando.
-logRotate: o usuário poderá executar o comando `logRotate`.
-reIndex: o usuário poderá executar o comando `reIndex`.
+**applicationMessage**
+O usuário poderá executar o comando `logApplicationMessage`.
+
+**closeAllDatabases**
+O usuário poderá executar o comando `closeAllDatabases`.
+
+**collMod**
+O usuário poderá executar o comando `collMod`.
+
+**compact**
+O usuário poderá executar o comando `compact`.
+
+**connPoolSync**
+O usuário poderá executar o comando `connPoolSync`.
+
+**convertToCapped**
+O usuário poderá executar o comando `convertToCapped`.
+
+**dropDatabase**
+O usuário poderá executar o comando `dropDatabase`.
+
+**dropIndex**
+O usuário poderá executar o comando `dropIndexes`.
+
+**fsync**
+O usuário poderá executar o comando `fsync`.
+
+**getParameter**
+O usuário poderá executar o comando `getParameter`.
+
+**hostInfo**
+Oornece informações sobre o server do MongoDB que está rodando.
+
+**logRotate**
+O usuário poderá executar o comando `logRotate`.
+
+**reIndex**
+O usuário poderá executar o comando `reIndex`.
 User can perform the reIndex command. Apply this action to database or collection resources.
-renameCollectionSameDB: permite ao usário renomear `collections` no banco atual, utilizando o comando `renameCollection`.
-repairDatabase: o usuário poderá executar o comando `repairDatabase`.
-setParameter: o usuário poderá executar o comando `setParameter`.
-shutdown: o usuário poderá executar o comando `shutdown`.
-touch: o usuário poderá executar o comando `touch`.
+
+**renameCollectionSameDB**
+Oermite ao usário renomear `collections` no banco atual, utilizando o comando `renameCollection`.
+
+**repairDatabase**
+O usuário poderá executar o comando `repairDatabase`.
+
+**setParameter**
+O usuário poderá executar o comando `setParameter`.
+
+**shutdown**
+O usuário poderá executar o comando `shutdown`.
+
+**touch**
+O usuário poderá executar o comando `touch`.
+
+---
 
 ### Diagnostic Actions
 
-collStats: o usuário poderá executar o comando `collStats`.
-connPoolStats: o usuário poderá executar os comandos `connPoolStats` e `shardConnPoolStats`.
-cursorInfo: o usuário poderá executar o comando `cursorInfo`.
-dbHash: o usuário poderá executar o comando `dbHash`.
-dbStats: o usuário poderá executar o comando `dbStats`.
-diagLogging: o usuário poderá executar o comando `diagLogging`.
-getCmdLineOpts: o usuário poderá executar o comando `getCmdLineOpts`.
-getLog: o usuário poderá executar o comando `getLog`.
-indexStats: o usuário poderá executar o comando `indexStats`.
-Changed in version 3.0: MongoDB 3.0 removes the indexStats command.
-listDatabases: o usuário poderá executar o comando `listDatabases`.
-listCollections: o usuário poderá executar o comando `listCollections`.
-listIndexes: o usuário poderá executar o comando `ListIndexes`.
-netstat: o usuário poderá executar o comando `netstat`.
-serverStatus: o usuário poderá executar o comando `serverStatus`.
-validate: o usuário poderá executar o comando `validate`.
-top: o usuário poderá executar o comando `top`.
+**collStats**
+O usuário poderá executar o comando `collStats`.
+
+**connPoolStats**
+O usuário poderá executar os comandos `connPoolStats` e `shardConnPoolStats`.
+
+**cursorInfo**
+O usuário poderá executar o comando `cursorInfo`.
+
+**dbHash**
+O usuário poderá executar o comando `dbHash`.
+
+**dbStats**
+O usuário poderá executar o comando `dbStats`.
+
+**diagLogging**
+O usuário poderá executar o comando `diagLogging`.
+
+**getCmdLineOpts**
+O usuário poderá executar o comando `getCmdLineOpts`.
+
+**getLog**
+O usuário poderá executar o comando `getLog`.
+
+**indexStats**
+O usuário poderá executar o comando `indexStats`.
+
+**listDatabases**
+O usuário poderá executar o comando `listDatabases`.
+
+**listCollections**
+O usuário poderá executar o comando `listCollections`.
+
+**listIndexes**
+O usuário poderá executar o comando `ListIndexes`.
+
+**netstat**
+O usuário poderá executar o comando `netstat`.
+
+**serverStatus**
+O usuário poderá executar o comando `serverStatus`.
+
+**validate**
+O usuário poderá executar o comando `validate`.
+
+**top**
+O usuário poderá executar o comando `top`.
+
+---
 
 ### Internal Actions
 
-anyAction: permite qualquer ação no `resource`, em algunas circunstâncias.
-internal: permite ações internas, em algunas circunstâncias.
+**anyAction**
+Permite qualquer ação no `resource`, em algunas circunstâncias.
+
+**internal**
+Permite ações internas, em algunas circunstâncias.
