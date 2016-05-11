@@ -465,4 +465,4 @@ Permite qualquer ação em um recurso. Não atribua esta ação, exceto para cir
 #### internal
 Permite ações internas. Não atribua esta ação, exceto para circunstâncias excepcionais.
 
-__Referência__: [Documentação oficial do MongoDB](https://docs.mongodb.com/v2.6/reference/).
+__Fonte__: [Documentação oficial do MongoDB](https://docs.mongodb.com/v2.6/reference/).
