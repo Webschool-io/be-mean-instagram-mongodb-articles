@@ -66,7 +66,7 @@ createIndex: Utilizado para criar um index;
 createRole: Utilizado para criar um role;
 createUser: Utilizado para criar um user;
 dropCollection: Utilizado para excluir uma collection;
-dropRole: Utilizado para excluir um role;
+dropRole: Utilizadoinse para excluir um role;
 dropUser: Utilizado para excluir um user;
 emptycapped: Utilizado para excluir todos os dados de uma Capped Collection;
 enableProfiler: Utilizado para alterar o perfil do banco de dados para capturar dados de desempenho.
@@ -85,7 +85,7 @@ authSchemaUpgrade: Utilizado para atualizar o esquema de autenticação e autori
 cleanupOrphaned: Utilizado para remover dados que não pertencem a um shard;
 cpuProfiler: Utilizado para habilitar o uso do profile da CPU;
 inprog: Utilizado para verificar operações ativas e pendentes num cluster;
-invalidateUserCache: Utilizado para 'limpar' da memória (cache) com as informações de usuário.
+invalidateUseCache: Utilizado para 'limpar' da memória (cache) com as informações de usuário.
 killop: Utilizado para matar operações num cluster;
 planCacheRead: Utilizado para listar planos de query em cache;
 planCacheWrite: Utilizado para remover os planos de query em cache;
