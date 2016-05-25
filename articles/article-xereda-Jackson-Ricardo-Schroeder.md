@@ -66,45 +66,45 @@ Permite, em um cluster, ações de monitoramento e gerenciamento. Usuários com 
 
 Ações providas pela role:
 
-#### addShard
-#### applicationMessage
-#### cleanupOrphaned
-#### flushRouterConfig
-#### listShards
-#### removeShard
-#### replSetConfigure
-#### replSetGetStatus
-#### replSetStateChange
-#### resync
+- addShard
+- applicationMessage
+- cleanupOrphaned
+- flushRouterConfig
+- listShards
+- removeShard
+- replSetConfigure
+- replSetGetStatus
+- replSetStateChange
+- resync
 
 Em todas as databases do cluster, provê as seguintes ações:
 
-#### enableSharding
-#### moveChunk
-#### splitChunk
-#### splitVector
+- enableSharding
+- moveChunk
+- splitChunk
+- splitVector
 
 Na collection `settings` da database `config`, provê acesso às seguintes ações:
 
-#### insert
-#### remove
-#### update
+- insert
+- remove
+- update
 
 Dentro da database `config`, nas collections `system.indexes`, `system.js`, `system.namespaces` e em todas as collections de configuração, permite às seguntes ações:
 
-#### collStats
-#### dbHash
-#### dbStats
-#### find
-#### killCursors
+- collStats
+- dbHash
+- dbStats
+- find
+- killCursors
 
 Na database `local`, permite acões na collection `replset`:
 
-#### collStats
-#### dbHash
-#### dbStats
-#### find
-#### killCursors
+- collStats
+- dbHash
+- dbStats
+- find
+- killCursors
 
 ### clusterMonitor
 
@@ -112,37 +112,37 @@ Autoriza acess somente leitura a ferramentas de monitoração, como o [MongoDB C
 
 Provê as seguintes permissões no cluster como um todo:
 
-#### connPoolStats
-#### cursorInfo
-#### getCmdLineOpts
-#### getLog
-#### getParameter
-#### getShardMap
-#### hostInfo
-#### inprog
-#### listDatabases
-#### listShards
-#### netstat
-#### replSetGetStatus
-#### serverStatus
-#### shardingState
-#### top
+- connPoolStats
+- cursorInfo
+- getCmdLineOpts
+- getLog
+- getParameter
+- getShardMap
+- hostInfo
+- inprog
+- listDatabases
+- listShards
+- netstat
+- replSetGetStatus
+- serverStatus
+- shardingState
+- top
 
 Provê as seguintes permissões em todas as databases do cluster:
 
-#### collStats
-#### dbStats
-#### getShardVersion
+- collStats
+- dbStats
+- getShardVersion
 
 Provê a ação `find` em todas as collections `system.profile` do cluster.
 
 Nas collections `system.indexes`, `system.js`, `system.namespaces` e em todas as collections de configuração da database `config`, provê acesso às seguntes ações:
 
-#### collStats
-#### dbHash
-#### dbStats
-#### find
-#### killCursors
+- collStats
+- dbHash
+- dbStats
+- find
+- killCursors
 
 ### hostManager
 
@@ -150,26 +150,26 @@ Autoriza o monitoramento e gerenciamento de servidores.
 
 Permite seguintes ações no cluster:
 
-#### applicationMessage
-#### closeAllDatabases
-#### connPoolSync
-#### cpuProfiler
-#### diagLogging
-#### flushRouterConfig
-#### fsync
-#### invalidateUserCache
-#### killop
-#### logRotate
-#### resync
-#### setParameter
-#### shutdown
-#### touch
-#### unlock
+- applicationMessage
+- closeAllDatabases
+- connPoolSync
+- cpuProfiler
+- diagLogging
+- flushRouterConfig
+- fsync
+- invalidateUserCache
+- killop
+- logRotate
+- resync
+- setParameter
+- shutdown
+- touch
+- unlock
 
 Permite as seguintes ações em qualquer databases do cluster:
 
-#### killCursors
-#### repairDatabase
+- killCursors
+- repairDatabase
 
 
 ## 4) Explique todas as ações de privilégio listadas aqui Privilege Actions.
