@@ -1,4 +1,4 @@
-# MongoDB - Artigo sobre Autenticação no MongoDB
+# MongoDB #### Artigo sobre Autenticação no MongoDB
 
 **Autor:** Jackson Ricardo Schroeder
 
@@ -66,45 +66,45 @@ Permite, em um cluster, ações de monitoramento e gerenciamento. Usuários com 
 
 Ações providas pela role:
 
-- addShard
-- applicationMessage
-- cleanupOrphaned
-- flushRouterConfig
-- listShards
-- removeShard
-- replSetConfigure
-- replSetGetStatus
-- replSetStateChange
-- resync
+#### addShard
+#### applicationMessage
+#### cleanupOrphaned
+#### flushRouterConfig
+#### listShards
+#### removeShard
+#### replSetConfigure
+#### replSetGetStatus
+#### replSetStateChange
+#### resync
 
 Em todas as databases do cluster, provê as seguintes ações:
 
-- enableSharding
-- moveChunk
-- splitChunk
-- splitVector
+#### enableSharding
+#### moveChunk
+#### splitChunk
+#### splitVector
 
 Na collection `settings` da database `config`, provê acesso às seguintes ações:
 
-- insert
-- remove
-- update
+#### insert
+#### remove
+#### update
 
 Dentro da database `config`, nas collections `system.indexes`, `system.js`, `system.namespaces` e em todas as collections de configuração, permite às seguntes ações:
 
-- collStats
-- dbHash
-- dbStats
-- find
-- killCursors
+#### collStats
+#### dbHash
+#### dbStats
+#### find
+#### killCursors
 
 Na database `local`, permite acões na collection `replset`:
 
-- collStats
-- dbHash
-- dbStats
-- find
-- killCursors
+#### collStats
+#### dbHash
+#### dbStats
+#### find
+#### killCursors
 
 ### clusterMonitor
 
@@ -112,37 +112,37 @@ Autoriza acess somente leitura a ferramentas de monitoração, como o [MongoDB C
 
 Provê as seguintes permissões no cluster como um todo:
 
-- connPoolStats
-- cursorInfo
-- getCmdLineOpts
-- getLog
-- getParameter
-- getShardMap
-- hostInfo
-- inprog
-- listDatabases
-- listShards
-- netstat
-- replSetGetStatus
-- serverStatus
-- shardingState
-- top
+#### connPoolStats
+#### cursorInfo
+#### getCmdLineOpts
+#### getLog
+#### getParameter
+#### getShardMap
+#### hostInfo
+#### inprog
+#### listDatabases
+#### listShards
+#### netstat
+#### replSetGetStatus
+#### serverStatus
+#### shardingState
+#### top
 
 Provê as seguintes permissões em todas as databases do cluster:
 
-- collStats
-- dbStats
-- getShardVersion
+#### collStats
+#### dbStats
+#### getShardVersion
 
 Provê a ação `find` em todas as collections `system.profile` do cluster.
 
 Nas collections `system.indexes`, `system.js`, `system.namespaces` e em todas as collections de configuração da database `config`, provê acesso às seguntes ações:
 
-- collStats
-- dbHash
-- dbStats
-- find
-- killCursors
+#### collStats
+#### dbHash
+#### dbStats
+#### find
+#### killCursors
 
 ### hostManager
 
@@ -150,26 +150,26 @@ Autoriza o monitoramento e gerenciamento de servidores.
 
 Permite seguintes ações no cluster:
 
-- applicationMessage
-- closeAllDatabases
-- connPoolSync
-- cpuProfiler
-- diagLogging
-- flushRouterConfig
-- fsync
-- invalidateUserCache
-- killop
-- logRotate
-- resync
-- setParameter
-- shutdown
-- touch
-- unlock
+#### applicationMessage
+#### closeAllDatabases
+#### connPoolSync
+#### cpuProfiler
+#### diagLogging
+#### flushRouterConfig
+#### fsync
+#### invalidateUserCache
+#### killop
+#### logRotate
+#### resync
+#### setParameter
+#### shutdown
+#### touch
+#### unlock
 
 Permite as seguintes ações em qualquer databases do cluster:
 
-- killCursors
-- repairDatabase
+#### killCursors
+#### repairDatabase
 
 
 ## 4) Explique todas as ações de privilégio listadas aqui Privilege Actions.
@@ -180,98 +180,98 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Consulta e Ações de Escrita
 
-- find
+#### find
 
 >Faz uma busca dos documentos de uma collection.
 
-- insert
+#### insert
 
 >Insere um ou mais documentos de uma coleção.
 
-- remove
+#### remove
 
 >Remove um ou mais documentos de uma coleção
 
-- update
+#### update
 
 >Atualiza um ou mais documentos de uma coleção.
 
 
 ### Ações para gerenciamento da database
 
-- changeCustomData
+#### changeCustomData
 
 >Modifica a _custom information_ de qualquer usuário da _datase_ informada.
 
-- changeOwnCustomData
+#### changeOwnCustomData
 
 >Permite que o usuário altere suas próprias _custom information_.
 
-- changeOwnPassword
+#### changeOwnPassword
 
 >Permite que o usuário mude sua própria senha.
 
-- changePassword
+#### changePassword
 
 >Permite que o usuário modifique a senha de qualquer usuário da _database_ informada.
 
-- createCollection
+#### createCollection
 
 >Permite criar uma coloeção na _database_.
 
-- createIndex
+#### createIndex
 
 >Permite criar um índice na _database_
 
-- createRole
+#### createRole
 
 >Permite criar novas _roles_ na _database_.
 
-- createUser
+#### createUser
 
 >Permite criar novos usuários na _database_.
 
-- dropCollection
+#### dropCollection
 
 >Permite excluir uma coleção da _database_.
 
-- dropRole
+#### dropRole
 
 >Permite excluir uma _role_ da _database_.
 
-- dropUser
+#### dropUser
 
 >Permite excluir usuário da _database_.
 
-- emptycapped
+#### emptycapped
 
 >Permite remover todos os documentos de uma coleção.
 
-- enableProfiler
+#### enableProfiler
 
 >Modificar o nível de perfil do usuário atual para capturar dados sobre o seu desempenho.
 
-- grantRole
+#### grantRole
 
 >Modifica uma _role_ para qualquer usuário da _database_.
 
-- killCursors
+#### killCursors
 
 >Permite matar cursores na _database_.
 
-- revokeRole
+#### revokeRole
 
 >Permite remover uma _role_ de um usuário da _database_.
 
-- unlock
+#### unlock
 
 >Permite destravar um serviço para que seja acessado por uma operação de leitura ou gravação.
 
-- viewRole
+#### viewRole
 
 >Permite ver informações sobre uma _role_ da _database_.
 
-- viewUser
+#### viewUser
 
 >Permive ver informações sobre um usuário.
 
@@ -279,39 +279,39 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações de Gerenciamento de Deploying
 
-- authSchemaUpgrade
+#### authSchemaUpgrade
 
 >Suporta o processo de atualização para sistemas existentes que usam autenticação e autorização entre as versões 2.4 e 2.6 e entre as versões 2.6 e 3.0.
 
-- cleanupOrphaned
+#### cleanupOrphaned
 
 >Permite excluir de um shard documentos órfãos cujo seus valores não pertençam a esse shard.
 
-- cpuProfiler
+#### cpuProfiler
 
 >Permite o usuário habilitar e usar o _CPU profiler_.
 
-- inprog
+#### inprog
 
 >Retorna operações ativas ou pendentes.
 
-- invalidateUserCache
+#### invalidateUserCache
 
 >Libera informações do usuário do cache na memória RAM, incluindo a remoção de credenciais e papéis de cada usuário.
 
-- killop
+#### killop
 
 >Mata uma determinada operação, identificada pelo seu id.
 
-- planCacheRead
+#### planCacheRead
 
 >Visualiza os planos de _list_ e _querys_ do cache na _database_ ou coleções.
 
-- planCacheWrite
+#### planCacheWrite
 
 >Remove os _cached query plans_ da coleção.
 
-- storageDetails
+#### storageDetails
 
 >Permite executar o comando _storageDetails_.
 
@@ -319,27 +319,27 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações de Replicação
 
-- appendOplogNote
+#### appendOplogNote
 
 >Permite adicionar notas ao oplog.
 
-- replSetConfigure
+#### replSetConfigure
 
 >Permite o usuário configurar uma _replica set_.
 
-- replSetGetStatus
+#### replSetGetStatus
 
 >Permite ver o atual statis da _replica set_.
 
-- replSetHeartbeat
+#### replSetHeartbeat
 
 >Permite enviar um sinal para verificar se o _replica set_ está ativo.
 
-- replSetStateChange
+#### replSetStateChange
 
 >Permite mudar o estado de uma _replica set_ através dos comandos _replSetFreeze_, _replSetMaintenance_, _replSetStepDown_ e _replSetSyncFrom_.
 
-- resync
+#### resync
 
 >Permite resincronizar as réplicas primárias e secundárias.
 
@@ -347,47 +347,47 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações de Sharding
 
-- addShard
+#### addShard
 
 >Permite adicionar um _shard_ no _cluster_.
 
-- enableSharding
+#### enableSharding
 
 >Permite ativar um _shard_ na _database_ usando o comando _enableSharding_.
 
-- flushRouterConfig
+#### flushRouterConfig
 
 >Permite limpar as informações do _cluster_ em cache e faz o _overload_ dos metadados.
 
-- getShardMap
+#### getShardMap
 
 >Permite mapear funcionalidades do _shard_.
 
-- getShardVersion
+#### getShardVersion
 
 >Permite obter a versão do _shard_.
 
-- listShards
+#### listShards
 
 >Exibe a lista de _shards_.
 
-- moveChunk
+#### moveChunk
 
 >Permite mover os _chunks_ entre os _shards_.
 
-- removeShard
+#### removeShard
 
 >Remove um _shard_ do _cluster_.
 
-- shardingState
+#### shardingState
 
 >Mostra o estado do _sharding_.
 
-- splitChunk
+#### splitChunk
 
 >Permite dividir os _chunks_ das coleções ou _databases_.
 
-- splitVector
+#### splitVector
 
 >Permite executar operações de metadados nos _clusters_ que possuem _shards_.
 
@@ -396,75 +396,75 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações dos Administração de Servidores
 
-- applicationMessage
+#### applicationMessage
 
 >Permite postar uma mensagem personalizada para o log de auditoria, através do comando logApplicationMessage.
 
-- closeAllDatabases
+#### closeAllDatabases
 
 >Permite fechar todas as _databases_ do _cluster_.
 
-- collMod
+#### collMod
 
 >Permite adicionar um conjunto de flags para modificar o comportamento do MongoDB.
 
-- compact
+#### compact
 
 >Permite regravar e desfragmentar todos os dados e índices de uma coleção na _database_.
 
-- connPoolSync
+#### connPoolSync
 
 >Permite sincronizar o _pool_ do _cluster_.
 
-- convertToCapped
+#### convertToCapped
 
 >Permite converter uma coleção _not-capped_ para _capped_.
 
-- dropDatabase
+#### dropDatabase
 
 >Permite excluir uma _database_.
 
-- dropIndex
+#### dropIndex
 
 >Permite excluir índices de uma coleção da _database_.
 
-- fsync
+#### fsync
 
 >Permite forçar o serviço mongod para que execute um _flush_ em todas as escritas pendentes na camada de armazenamento em disco.
 
-- getParameter
+#### getParameter
 
 >Permite recuperar o valor das opções configuradas anteriormente no _cluster_.
 
-- hostInfo
+#### hostInfo
 
 >Exibe informações sobre o _server_ que o MongoDB está rodando.
 
-- logRotate
+#### logRotate
 
 >Permite fazer uma rotação nos logs para que este não se concerte em um único arquivo, diminuindo o espaço necessário para o armazenamento.
 
-- reIndex
+#### reIndex
 
 >Permite apagar e recriar índices da coleção.
 
-- renameCollectionSameDB
+#### renameCollectionSameDB
 
 >Permite renomear uma coleção na _database_ corrente.
 
-- repairDatabase
+#### repairDatabase
 
 >Permite checar e reparar uma _database_ com insconsistências no armazenamento dos dados.
 
-- setParameter
+#### setParameter
 
 >Permite alterar alguns parâmetros do _cluster_.
 
-- shutdown
+#### shutdown
 
 >Limpa todos as _databases_ e encerra os processos.
 
-- touch
+#### touch
 
 >Permite carregar os dados da camada de armazenamento de dados na memória.
 
@@ -472,67 +472,67 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações de Diagnósticos
 
-- collStats
+#### collStats
 
 >Visualiza estatísticas de armazenamento de uma determina coleção.
 
-- connPoolStats
+#### connPoolStats
 
 >Permite executar um comando interno no _cluster_.
 
-- cursorInfo
+#### cursorInfo
 
 >Permite retornar informações sobre o cursor.
 
-- dbHash
+#### dbHash
 
 >Permite executar comandos com suporte à algumas configurações do servidor.
 
-- dbStats
+#### dbStats
 
 >Permite verificar estatísticas sobre o servidor.
 
-- diagLogging
+#### diagLogging
 
 >Permite retornar dados adicionais para diagnóstico.
 
-- getCmdLineOpts
+#### getCmdLineOpts
 
 >Permite executar o comando  o comando _getCmdLineOpts_ no _cluster_.
 
-- getLog
+#### getLog
 
 >Permite executar o comando _getLog_ no _cluster_.
 
-- indexStats
+#### indexStats
 
 >Descontinuado na versão 3.0 do MongoDB, permite retornar estatísticas sobre índices de coleções da _database_.
 
-- listDatabases
+#### listDatabases
 
 >Permite listar estatísticas das _databases_.
 
-- listCollections
+#### listCollections
 
 >Permite listar estatísticas das coleções da _database_.
 
-- listIndexes
+#### listIndexes
 
 >Permite listar os índices da coleção.
 
-- netstat
+#### netstat
 
 >Permite utilizar o comando _netstat_.
 
-- serverStatus
+#### serverStatus
 
 >Permite visualizar estatísticas sobre o _status_ do servidor.
 
-- validate
+#### validate
 
 >Permite verificar estruturar de nomes de coleções e/ou índices.
 
-- top
+#### top
 
 >Permite retornar estatísticas de uso para cada coleção da _database_.
 
@@ -540,10 +540,10 @@ As ações de previlégio definem as operações que um usuário pode executar e
 
 ### Ações Internas
 
-- anyAction
+#### anyAction
 
 >Permite uma ação em um recurso. Não utilize essa ação a não ser em circunstâncias excepcionais.
 
-- internal
+#### internal
 
 >Permite ações internas. Não utilize essa ação a não ser em circunstâncias excepcionais.
