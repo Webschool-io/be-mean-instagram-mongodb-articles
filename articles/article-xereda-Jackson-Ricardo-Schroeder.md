@@ -55,12 +55,12 @@ db.createUser(usuario);
 Em vez de somente databases específicas em um servidor, as permissões de administração de cluster são capazes de administrar várias instâncias do MongoDB organizadas em cluster.
 
 
-> clusterAdmin
+### clusterAdmin
 
 Mais alto nível de gerenciamento de cluster. O mesmo que conceder individualmente as roles `clusterManager`, `clusterMonitor` e `hostManager`. Também permite que o um usuário com esta role possa dropar uma database (`dropDatabase`).
 
 
-> clusterManager
+### clusterManager
 
 Permite, em um cluster, ações de monitoramento e gerenciamento. Usuários com essa permissão podem acessar as databases `config` e `local`, usadas em sharding e replicação.
 
@@ -106,7 +106,7 @@ Na database `local`, permite acões na collection `replset`:
 - find
 - killCursors
 
-> clusterMonitor
+### clusterMonitor
 
 Autoriza acess somente leitura a ferramentas de monitoração, como o [MongoDB Cloud Manager](https://cloud.mongodb.com/?jmp=docs&_ga=1.132013837.389647211.1462567638).
 
@@ -144,7 +144,7 @@ Nas collections `system.indexes`, `system.js`, `system.namespaces` e em todas as
 - find
 - killCursors
 
-> hostManager
+### hostManager
 
 Autoriza o monitoramento e gerenciamento de servidores.
 
@@ -181,166 +181,215 @@ As ações de previlégio definem as operações que um usuário pode executar e
 ### Consulta e Ações de Escrita
 
 - find
-Faz uma busca dos documentos de uma collection.
+
+>Faz uma busca dos documentos de uma collection.
 
 - insert
-Insere um ou mais documentos de uma coleção.
+
+>Insere um ou mais documentos de uma coleção.
 
 - remove
-Remove um ou mais documentos de uma coleção
+
+>Remove um ou mais documentos de uma coleção
 
 - update
-Atualiza um ou mais documentos de uma coleção.
+
+>Atualiza um ou mais documentos de uma coleção.
 
 
 ### Ações para gerenciamento da database
 
 - changeCustomData
-Modifica a _custom information_ de qualquer usuário da _datase_ informada.
+
+>Modifica a _custom information_ de qualquer usuário da _datase_ informada.
 
 - changeOwnCustomData
-Permite que o usuário altere suas próprias _custom information_.
+
+>Permite que o usuário altere suas próprias _custom information_.
 
 - changeOwnPassword
-Permite que o usuário mude sua própria senha.
+
+>Permite que o usuário mude sua própria senha.
 
 - changePassword
-Permite que o usuário modifique a senha de qualquer usuário da _database_ informada.
+
+>Permite que o usuário modifique a senha de qualquer usuário da _database_ informada.
 
 - createCollection
-Permite criar uma coloeção na _database_.
+
+>Permite criar uma coloeção na _database_.
 
 - createIndex
-Permite criar um índice na _database_
+
+>Permite criar um índice na _database_
 
 - createRole
-Permite criar novas _roles_ na _database_.
+
+>Permite criar novas _roles_ na _database_.
 
 - createUser
-Permite criar novos usuários na _database_.
+
+>Permite criar novos usuários na _database_.
 
 - dropCollection
-Permite excluir uma coleção da _database_.
+
+>Permite excluir uma coleção da _database_.
 
 - dropRole
-Permite excluir uma _role_ da _database_.
+
+>Permite excluir uma _role_ da _database_.
 
 - dropUser
-Permite excluir usuário da _database_.
+
+>Permite excluir usuário da _database_.
 
 - emptycapped
-Permite remover todos os documentos de uma coleção.
+
+>Permite remover todos os documentos de uma coleção.
 
 - enableProfiler
-Modificar o nível de perfil do usuário atual para capturar dados sobre o seu desempenho.
+
+>Modificar o nível de perfil do usuário atual para capturar dados sobre o seu desempenho.
 
 - grantRole
-Modifica uma _role_ para qualquer usuário da _database_.
+
+>Modifica uma _role_ para qualquer usuário da _database_.
 
 - killCursors
-Permite matar cursores na _database_.
+
+>Permite matar cursores na _database_.
 
 - revokeRole
-Permite remover uma _role_ de um usuário da _database_.
+
+>Permite remover uma _role_ de um usuário da _database_.
 
 - unlock
-Permite destravar um serviço para que seja acessado por uma operação de leitura ou gravação.
+
+>Permite destravar um serviço para que seja acessado por uma operação de leitura ou gravação.
 
 - viewRole
-Permite ver informações sobre uma _role_ da _database_.
+
+>Permite ver informações sobre uma _role_ da _database_.
 
 - viewUser
-Permive ver informações sobre um usuário.
+
+>Permive ver informações sobre um usuário.
 
 
 
 ### Ações de Gerenciamento de Deploying
 
 - authSchemaUpgrade
-Suporta o processo de atualização para sistemas existentes que usam autenticação e autorização entre as versões 2.4 e 2.6 e entre as versões 2.6 e 3.0.
+
+>Suporta o processo de atualização para sistemas existentes que usam autenticação e autorização entre as versões 2.4 e 2.6 e entre as versões 2.6 e 3.0.
 
 - cleanupOrphaned
-Permite excluir de um shard documentos órfãos cujo seus valores não pertençam a esse shard.
+
+>Permite excluir de um shard documentos órfãos cujo seus valores não pertençam a esse shard.
 
 - cpuProfiler
-Permite o usuário habilitar e usar o _CPU profiler_.
+
+>Permite o usuário habilitar e usar o _CPU profiler_.
 
 - inprog
-Retorna operações ativas ou pendentes.
+
+>Retorna operações ativas ou pendentes.
 
 - invalidateUserCache
-Libera informações do usuário do cache na memória RAM, incluindo a remoção de credenciais e papéis de cada usuário.
+
+>Libera informações do usuário do cache na memória RAM, incluindo a remoção de credenciais e papéis de cada usuário.
 
 - killop
-Mata uma determinada operação, identificada pelo seu id.
+
+>Mata uma determinada operação, identificada pelo seu id.
 
 - planCacheRead
-Visualiza os planos de _list_ e _querys_ do cache na _database_ ou coleções.
+
+>Visualiza os planos de _list_ e _querys_ do cache na _database_ ou coleções.
 
 - planCacheWrite
-Remove os _cached query plans_ da coleção.
+
+>Remove os _cached query plans_ da coleção.
 
 - storageDetails
-Permite executar o comando _storageDetails_.
+
+>Permite executar o comando _storageDetails_.
 
 
 
 ### Ações de Replicação
 
 - appendOplogNote
-Permite adicionar notas ao oplog.
+
+>Permite adicionar notas ao oplog.
 
 - replSetConfigure
-Permite o usuário configurar uma _replica set_.
+
+>Permite o usuário configurar uma _replica set_.
 
 - replSetGetStatus
-Permite ver o atual statis da _replica set_.
+
+>Permite ver o atual statis da _replica set_.
 
 - replSetHeartbeat
-Permite enviar um sinal para verificar se o _replica set_ está ativo.
+
+>Permite enviar um sinal para verificar se o _replica set_ está ativo.
 
 - replSetStateChange
-Permite mudar o estado de uma _replica set_ através dos comandos _replSetFreeze_, _replSetMaintenance_, _replSetStepDown_ e _replSetSyncFrom_.
+
+>Permite mudar o estado de uma _replica set_ através dos comandos _replSetFreeze_, _replSetMaintenance_, _replSetStepDown_ e _replSetSyncFrom_.
 
 - resync
-Permite resincronizar as réplicas primárias e secundárias.
+
+>Permite resincronizar as réplicas primárias e secundárias.
 
 
 
 ### Ações de Sharding
 
 - addShard
-Permite adicionar um _shard_ no _cluster_.
+
+>Permite adicionar um _shard_ no _cluster_.
 
 - enableSharding
-Permite ativar um _shard_ na _database_ usando o comando _enableSharding_.
+
+>Permite ativar um _shard_ na _database_ usando o comando _enableSharding_.
 
 - flushRouterConfig
-Permite limpar as informações do _cluster_ em cache e faz o _overload_ dos metadados.
+
+>Permite limpar as informações do _cluster_ em cache e faz o _overload_ dos metadados.
 
 - getShardMap
-Permite mapear funcionalidades do _shard_.
+
+>Permite mapear funcionalidades do _shard_.
 
 - getShardVersion
-Permite obter a versão do _shard_.
+
+>Permite obter a versão do _shard_.
 
 - listShards
-Exibe a lista de _shards_.
+
+>Exibe a lista de _shards_.
 
 - moveChunk
-Permite mover os _chunks_ entre os _shards_.
+
+>Permite mover os _chunks_ entre os _shards_.
 
 - removeShard
-Remove um _shard_ do _cluster_.
+
+>Remove um _shard_ do _cluster_.
 
 - shardingState
-Mostra o estado do _sharding_.
+
+>Mostra o estado do _sharding_.
 
 - splitChunk
-Permite dividir os _chunks_ das coleções ou _databases_.
+
+>Permite dividir os _chunks_ das coleções ou _databases_.
 
 - splitVector
-Permite executar operações de metadados nos _clusters_ que possuem _shards_.
+
+>Permite executar operações de metadados nos _clusters_ que possuem _shards_.
 
 
 
@@ -348,117 +397,153 @@ Permite executar operações de metadados nos _clusters_ que possuem _shards_.
 ### Ações dos Administração de Servidores
 
 - applicationMessage
-Permite postar uma mensagem personalizada para o log de auditoria, através do comando logApplicationMessage.
+
+>Permite postar uma mensagem personalizada para o log de auditoria, através do comando logApplicationMessage.
 
 - closeAllDatabases
-Permite fechar todas as _databases_ do _cluster_.
+
+>Permite fechar todas as _databases_ do _cluster_.
 
 - collMod
-Permite adicionar um conjunto de flags para modificar o comportamento do MongoDB.
+
+>Permite adicionar um conjunto de flags para modificar o comportamento do MongoDB.
 
 - compact
-Premite regravar e desfragmentar todos os dados e índices de uma coleção na _database_.
+
+>Permite regravar e desfragmentar todos os dados e índices de uma coleção na _database_.
 
 - connPoolSync
-Permite sincronizar o _pool_ do _cluster_.
+
+>Permite sincronizar o _pool_ do _cluster_.
 
 - convertToCapped
-Permite converter uma coleção _not-capped_ para _capped_.
+
+>Permite converter uma coleção _not-capped_ para _capped_.
 
 - dropDatabase
-Permite excluir uma _database_.
+
+>Permite excluir uma _database_.
 
 - dropIndex
-Permite excluir índices de uma coleção da _database_.
+
+>Permite excluir índices de uma coleção da _database_.
 
 - fsync
-Permite forçar o serviço mongod para que execute um _flush_ em todas as escritas pendentes na camada de armazenamento em disco.
+
+>Permite forçar o serviço mongod para que execute um _flush_ em todas as escritas pendentes na camada de armazenamento em disco.
 
 - getParameter
-Permite recuperar o valor das opções configuradas anteriormente no _cluster_.
+
+>Permite recuperar o valor das opções configuradas anteriormente no _cluster_.
 
 - hostInfo
-Exibe informações sobre o _server_ que o MongoDB está rodando.
+
+>Exibe informações sobre o _server_ que o MongoDB está rodando.
 
 - logRotate
-Permite fazer uma rotação nos logs para que este não se concerte em um único arquivo, diminuindo o espaço necessário para o armazenamento.
+
+>Permite fazer uma rotação nos logs para que este não se concerte em um único arquivo, diminuindo o espaço necessário para o armazenamento.
 
 - reIndex
-Permite apagar e recriar índices da coleção.
+
+>Permite apagar e recriar índices da coleção.
 
 - renameCollectionSameDB
-Permite renomear uma coleção na _database_ corrente.
+
+>Permite renomear uma coleção na _database_ corrente.
 
 - repairDatabase
-Permite checar e reparar uma _database_ com insconsistências no armazenamento dos dados.
+
+>Permite checar e reparar uma _database_ com insconsistências no armazenamento dos dados.
 
 - setParameter
-Permite alterar alguns parâmetros do _cluster_.
+
+>Permite alterar alguns parâmetros do _cluster_.
 
 - shutdown
-Limpa todos as _databases_ e encerra os processos.
+
+>Limpa todos as _databases_ e encerra os processos.
 
 - touch
-Permite carregar os dados da camada de armazenamento de dados na memória.
+
+>Permite carregar os dados da camada de armazenamento de dados na memória.
 
 
 
 ### Ações de Diagnósticos
 
 - collStats
-Visualiza estatísticas de armazenamento de uma determina coleção.
+
+>Visualiza estatísticas de armazenamento de uma determina coleção.
 
 - connPoolStats
-Permite executar um comando interno no _cluster_.
+
+>Permite executar um comando interno no _cluster_.
 
 - cursorInfo
-Permite retornar informações sobre o cursor.
+
+>Permite retornar informações sobre o cursor.
 
 - dbHash
-Permite executar comandos com suporte à algumas configurações do servidor.
+
+>Permite executar comandos com suporte à algumas configurações do servidor.
 
 - dbStats
-Permite verificar estatísticas sobre o servidor.
+
+>Permite verificar estatísticas sobre o servidor.
 
 - diagLogging
-Permite retornar dados adicionais para diagnóstico.
+
+>Permite retornar dados adicionais para diagnóstico.
 
 - getCmdLineOpts
-Permite executar o comando  o comando _getCmdLineOpts_ no _cluster_.
+
+>Permite executar o comando  o comando _getCmdLineOpts_ no _cluster_.
 
 - getLog
-Permite executar o comando _getLog_ no _cluster_.
+
+>Permite executar o comando _getLog_ no _cluster_.
 
 - indexStats
-Descontinuado na versão 3.0 do MongoDB, permite retornar estatísticas sobre índices de coleções da _database_.
+
+>Descontinuado na versão 3.0 do MongoDB, permite retornar estatísticas sobre índices de coleções da _database_.
 
 - listDatabases
-Permite listar estatísticas das _databases_.
+
+>Permite listar estatísticas das _databases_.
 
 - listCollections
-Permite listar estatísticas das coleções da _database_.
+
+>Permite listar estatísticas das coleções da _database_.
 
 - listIndexes
-Permite listar os índices da coleção.
+
+>Permite listar os índices da coleção.
 
 - netstat
-Permite utilizar o comando _netstat_.
+
+>Permite utilizar o comando _netstat_.
 
 - serverStatus
-Permite visualizar estatísticas sobre o _status_ do servidor.
+
+>Permite visualizar estatísticas sobre o _status_ do servidor.
 
 - validate
-Permite verificar estruturar de nomes de coleções e/ou índices.
+
+>Permite verificar estruturar de nomes de coleções e/ou índices.
 
 - top
-Permite retornar estatísticas de uso para cada coleção da _database_.
+
+>Permite retornar estatísticas de uso para cada coleção da _database_.
 
 
 
 ### Ações Internas
 
 - anyAction
-Permite uma ação em um recurso. Não utilize essa ação a não ser em circunstâncias excepcionais.
+
+>Permite uma ação em um recurso. Não utilize essa ação a não ser em circunstâncias excepcionais.
 
 - internal
-Permite ações internas. Não utilize essa ação a não ser em circunstâncias excepcionais.
+
+>Permite ações internas. Não utilize essa ação a não ser em circunstâncias excepcionais.
