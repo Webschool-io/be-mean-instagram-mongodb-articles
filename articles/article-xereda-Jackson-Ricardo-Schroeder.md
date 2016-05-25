@@ -1,14 +1,14 @@
 # MongoDB - Artigo sobre Autenticação no MongoDB
 
 **Autor:** Jackson Ricardo Schroeder
-**Usuário:** @xereda
 
+**Usuário:** [xereda](https://github.com/xereda)
 
 **Data:** 1464123003469
 
 ## 1) Qual a diferença entre Autenticação e Autorização?
 
-A ** _Autenticação_ ** resume-se apenas no processo de acesso de um determinado usuário a um serviço. Já a ** _autorização_ ** vem após uma autenticação bem sucedida e consiste na liberação de permissões, baseadas em papéis ou em ações, vinculadas ao usuário _autenticador_ previamente.
+A **_Autenticação_** resume-se apenas no processo de acesso de um determinado usuário a um serviço. Já a **_autorização_** vem após uma autenticação bem sucedida e consiste na liberação de permissões, baseadas em papéis ou em ações, vinculadas ao usuário _autenticador_ previamente.
 
 
 ## 2) Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
