@@ -1,0 +1,258 @@
+# MongoDb - Artigo sobre Autenticação no MongoDb
+**Autor:** Vítor Capretz
+
+**Data** 1465431109521
+
+## Qual a diferença entre Autenticação e Autorização?
+Autenticação é o processo que utiliza a Autorização em si para que os usuários se identifiquem para ter acesso ao MongoDB.
+
+A Autenticação é como se fosse o login do usuário em um sistema. No Mongo é feito com `db.auth()`
+A Autorização define as permissões do usuário em si, depois de logado pode Adicionar, Editar, Excluir, etc. No Mongo ela é feita usando as `roles` para cada usuário.
+
+## Descreva aqui o passo-a-passo como criar um usuário administrador e um usuário comum.
+#### Admin
+Para criar um Admin no Mongo é necessário que o usuário que está criando tenha as permissões:
+* `createUser`
+* `grantRole`
+* Ou: ter as permissões `userAdmin` ou `userAdminAnyDatabase`
+
+O processo é: 
+```
+use NOME_DO_DB
+db.createUser(
+    {
+        user: "NOME_DO_USUARIO_AQUI",
+        pwd: "UMA_SENHA_DIFERENTE_DE_123",
+        roles: [
+            "UserAdmin OU userAdminAnyDatabase"
+        ]
+    }
+)
+```
+
+#### Usuário comum
+Para apenas criar um usuário basta ter a permissão:
+* `createUser`
+Mas caso queira definir as `roles` para este usuário, é necessário também ter a permissão: 
+* `grantRole`
+
+O processo é:
+```
+use NOME_DO_DB
+db.createUser(
+    {
+        user: "NOME_DO_USUARIO_AQUI",
+        pwd: "QUALQUER_UMA_MENOS_password",
+        roles: [ "readWrite" ] //OPCIONAL
+    }
+)
+```
+
+## Explique cada papel listado em Cluster Administration Roles.
+As Cluster Administration Roles são usadas no DB `admin` e não se limitam à apenas uma DB.
+
+A vantagem é que também funcionam para as `replica set` e `sharded cluster`. E são as seguintes:
+
+#### clusterAdmin
+
+Inclui tudo. É a junção de `clusterManager`, `clusterMonitor` e `hostManager`, incluindo o adicional: `dropDatabase`
+
+#### clusterManager
+
+Ações de gerenciamento e monitoramento para o cluster. Dá acesso às databases `config` (shard) e `local` (replica). E as ações são:
+
+Para o cluster no geral:
+* addShard - adicionar shard
+* applicationMessage - ação de `logApplicationMessage`
+* cleanupOrphaned - ação de deletar "órfãos" do shard
+* flushRouterConfig - limpar informações do cluster guardadas no cache
+* listShards - listar os shards
+* removeShard - remover o shard do cluster
+* replSetConfigure - permite o usuário de configurar um replica set
+* replSetGetStatus - retornar o status da replica set
+* replSetStateChange - usuário pode trocar status de uma replica set
+* resync - comando para resincronizar uma instância do mongod "vencida"
+
+Para todas as databases:
+* enableSharding - possibilidade de habilitar uma shard para as coleções
+* moveChunk - comando para mover chunks entre as shards
+* splitChunk - dividir chunks entre as shards
+* splitVector - comando que suporta operações de meta-dados nos clusters shardeados
+
+Para a database `config`, libera as seguintes ações na collection `settings`:
+* insert - comando `insert`, auto explicativo
+* remove - comando `remove`, auto explicativo
+* update - comando `update`, auto explicativo
+
+Também para a database `config`, libera as seguintes ações para todas as collections de configuração e para `system.indexes`, `system.js` e `system.namespaces`:
+* collStats - retorna diversas informações de status da collection
+* dbHash - possibilidade de retornar informações das conexões abertas de uma instância da DB para outros shards e replica set
+* dbStats - retorna diversas informações de status da DB
+* find - comando `find`
+* killCursors - usuário pode "matar" cursores numa determinada collection
+
+Os comandos anteriores também se aplicam para a database `local` na coleção `replset`
+
+#### clusterMonitor
+
+Acesso apenas de leitura para as ferramentas de monitoramento.
+
+Ações para o cluster no geral: 
+* connPoolStats - possibilidade de retornar informações das conexões abertas de uma instância da DB para outros shards e replica set
+* cursorInfo - removido na versão 3.2, um comando referente é o `serverStatus`, que retorna um documento com as informações gerais do estado da database.
+* getCmdLineOpts - retorna um documento com as linhas de comando para iniciarem o `mongod` ou `mongos`
+* getLog - retorna um documento com uma array `log` com os logs do `mongod`
+* getParameter - usado para obtenção dos valores das opções setadas na linha de comando
+* getShardMap - comando interno que suporta a funcionalidade de sharding
+* hostInfo - retorna informações sobre o servidor que a instância do MongoDB está rodando
+* inprog - oferece comando para retornar operações ativas e pendentes
+* listDatabases - lista de todas as databases e informações sobre elas
+* listShards - lista de shards configurados, só pode ser usado na database `admin`
+* netstat - comando interno somente disponível na instância do `mongos`
+* replSetGetStatus - retornar o status da replica set
+* serverStatus - retorna um documento com um status geral do estado da database
+* shardingState - comando para mostrar se a instância do `mongod` é um membro do cluster shardeado
+* top - comando que retorna estatísticas de uso para cada collection
+
+Para todas as databases, disponibiliza as seguintes ações: 
+* collStats - retorna diversas informações de status da collection
+* dbStats - retorna diversas informações de status da DB
+* getShardVersion - suporta a funcionalidade de sharding
+
+Para as coleções de `system.profile` disponibiliza somente a ação:
+* find - comando `find`
+
+Disponibiliza as seguintes ações para as configurações de collections da database `config` e collections `system.indexes`, `system.js` e `system.namespaces`:
+* collStats - retorna diversas informações de status da collection
+* dbHash - possibilidade de retornar informações das conexões abertas de uma instância da DB para outros shards e replica set
+* dbStats - retorna diversas informações de status da DB
+* find - comando `find`
+* killCursors - usuário pode "matar" cursores numa determinada collection
+
+#### hostManager
+
+Permite o monitoramento e gerenciamento dos servers.
+
+Para o cluster no geral:
+* applicationMessage - ação de `logApplicationMessage`
+* closeAllDatabases - comando para fechar todas as databases
+* connPoolSync - comando interno
+* cpuProfiler - usuário pode habilitar e usar o CPU profiler
+* diagLogging - comando que captura dados adicionais para diagnósticos
+* flushRouterConfig - limpar informações do cluster guardadas no cache
+* fsync - comando utilizado para forçar o flush de todas as escritas pendentes
+* invalidateUserCache - comando para dar o flush em informações do usuário no cache da memória
+* killop - finaliza uma operação pelo parâmetro ID
+* logRotate - troca os logs do MongoDB para não sobrecarregar com um arquivo só
+* resync - comando para resincronizar uma instância do mongod "vencida"
+* setParameter - comando usado para modificar opções setadas na linha de comando
+* shutdown - limpa os resources da database e finaliza o processo
+* touch - carrega informação do armazenamento e coloca na memória
+* unlock - destrava o efeito usado pelo lock, normalmente usados para back-ups
+
+Para todas as databases no cluster:
+* killCursors - usuário pode "matar" cursores numa determinada collection
+* repairDatabase - procura e rapara erros e dados inconsistentes no armazenamento
+
+## Explique todas as ações de privilégio listadas em Privilege Actions.
+
+#### Query and Write Actions
+* find - ação para o método `db.collection.find()`
+* insert - comando `insert`
+* remove - ação para o método `db.collection.remove()`
+* update - comando `update`
+* bypassDocumentValidation - (a partir da versão 3.2) usuário pode violar validação do documento em comandos que suportem essa ação
+
+#### Database Management Actions
+* changeCustomData - usuário pode trocar as informações customizadas de outros usuários em uma determinada database
+* changeOwnCustomData - mesmo do anterior, porém somente a informação do próprio usuário
+* changeOwnPassword - usuário pode trocar sua própria senha
+* changePassword - mesmo do anterior, porém serve para qualquer usuário
+* createCollection - ação para o método `db.createCollection()`
+* createIndex - ação para o método `db.collection.createIndex()`
+* createRole - usuário pode criar roles para a database especificada
+* dropCollection - ação para o método `db.collection.drop()`
+* dropRole - usuário pode remover as roles criadas para a database especificada
+* dropUser - usuário pode remover outros usuários da database especificada
+* emptycapped - usuário pode usar o comando `emptycapped` (remove todos os documentos de uma collection "tampada")
+* enableProfiler - ação para o método `db.setProfilingLevel()`
+* grantRole - usuário pode dar permissões para qualquer usuário para qualquer database
+* killCursors - possibilidade de "matar" cursores de um alvo desejado
+* revokeRole - o contrário do `grantRole`, usuário retira permissões
+* unlock - ação para o método `db.fsyncUnlock()`
+* viewRole - visualizar informações sobre qualquer role na database
+* viewUser - visualizar informações sobre qualquer usuário na database
+
+#### Deployment Management Actions
+* authSchemaUpgrade - usuário pode executar o comando `authSchemaUpgrade`
+* cleanupOrphaned - usuário pode executar o comando `cleanupOrphaned`
+* cpuProfiler - possibilidade de habilitar e usar o CPU profiler
+* inprog - ação para o método `db.currentOp()`
+* invalidateUserCache - usuário pode executar o comando `invalidateUserCache`
+* killop - ação para o método `db.killOp()`
+* planCacheRead - usuário pode usar os comandos `planCacheListPlans` e `planCacheListQueryShapes`, e também os métodos `PlanCache.getPlansByQuery()` e `PlanCache.listQueryShapes()`
+* planCacheWrite - usuário pode usar o comando `planCacheClear` e os métodos `PlanCache.clear()` e `PlanCache.clearPlansByQuery()`
+* storageDetails - usuário pode executar o comando `storageDetails`
+
+#### Replication Actions
+* appendOplogNote - adicionar notas para o oplog
+* replSetConfigure - possibilidade de configurar replica set
+* replSetGetStatus - usuário pode executar o comando `replSetGetStatus`
+* replSetHeartbeat - usuário pode executar o comando `replSetHeartbeat`
+* replSetStateChange - trocar o estado da réplica pelos comandos `replSetFreeze`, `replSetMaintenance`, `replSetStepDown` e `replSetSyncFrom`
+* resync - usuário pode executar o comando `resync`
+
+#### Sharding Actions
+* addShard - usuário pode executar o comando `addShard`
+* enableSharding - ativar sharding na database usando `enableSharding` e "shardear" uma collection usando `shardCollection`
+* flushRouterConfig - usuário pode executar o comando `flushRouterConfig`
+* getShardMap - usuário pode executar o comando `getShardMap`
+* getShardVersion - usuário pode executar o comando `getShardVersion`
+* listShards - usuário pode executar o comando `listShards`
+* moveChunk - além da execução do comando `moveChunk`, usuário pode executar o comando `movePrimary`
+* removeShard - usuário pode executar o comando `removeShard`
+* shardingState - usuário pode executar o comando `shardingState` 
+* splitChunk - usuário pode executar o comando `splitChunk`
+* splitVector - usuário pode executar o comando `splitVector`
+
+#### Server Administration Actions
+* applicationMessage - usuário pode executar o comando `applicationMessage` 
+* closeAllDatabases - usuário pode executar o comando `closeAllDatabases`
+* collMod - usuário pode executar o comando `collMod` 
+* compact - usuário pode executar o comando `compact` 
+* connPoolSync - usuário pode executar o comando `connPoolSync` 
+* convertToCapped - usuário pode executar o comando `convertToCapped` 
+* dropDatabase - usuário pode executar o comando `dropDatabase` 
+* dropIndex - usuário pode executar o comando `dropIndex` 
+* fsync - usuário pode executar o comando `fsync` 
+* getParameter - usuário pode executar o comando `getParameter` 
+* hostInfo - gera informações sobre o servidor do MongoDB em que a instância está sendo executada
+* logRotate - usuário pode executar o comando `logRotate` 
+* reIndex - usuário pode executar o comando `reIndex`
+* renameCollectionSameDB - usuário pode renomear as coleções da database atual com o comando `renameCollection`, além disso, o usuário pode ter o `find` na collection de origem ou não ter o `find` na collection de destino
+* repairDatabase - usuário pode executar o comando `repairDatabase` 
+* setParameter - usuário pode executar o comando `setParameter` 
+* shutdown - usuário pode executar o comando `shutdown` 
+* touch - usuário pode executar o comando `touch` 
+
+#### Diagnostic Actions
+* collStats - usuário pode executar o comando `collStats`
+* connPoolStats - possibilidade de executar os comandos `connPoolStats` e `shardConnPoolStats`
+* cursorInfo - usuário pode executar o comando `cursorInfo` 
+* dbHash - usuário pode executar o comando `dbHash` 
+* dbStats - usuário pode executar o comando `dbStats` 
+* diagLogging - usuário pode executar o comando `diagLogging` 
+* getCmdLineOpts - usuário pode executar o comando `getCmdLineOpts` 
+* getLog - usuário pode executar o comando `getLog` 
+* indexStats - (A partir da versão 3.0 este documento foi removido) usuário pode executar o comando `indexStats`
+* listDatabases - usuário pode executar o comando `listDatabases`
+* listCollections - usuário pode executar o comando `listCollections`
+* listIndexes - usuário pode executar o comando `listIndexes`
+* netstat - usuário pode executar o comando `netstat`
+* serverStatus - usuário pode executar o comando `serverStatus`
+* validate - usuário pode executar o comando `validate`
+* top - usuário pode executar o comando `top`
+
+#### Internal Actions
+* anyAction - permite qualquer ação em um determinado recurso
+* internal - permite ações internas
